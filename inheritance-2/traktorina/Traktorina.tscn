@@ -1,0 +1,261 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://inheritance-2/basic_slime/BasicSlime.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Slimes/slime_idle1.png" type="Texture" id=2]
+[ext_resource path="res://assets/16x16 RPG Item Pack/Item__14.png" type="Texture" id=3]
+[ext_resource path="res://assets/Slimes/slime_move.png" type="Texture" id=4]
+[ext_resource path="res://assets/Slimes/slime_hit.png" type="Texture" id=5]
+[ext_resource path="res://assets/Slimes/slime_die.png" type="Texture" id=6]
+[ext_resource path="res://inheritance-2/traktorina/Traktorina.gd" type="Script" id=7]
+
+[sub_resource type="CircleShape2D" id=31]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 6 )
+region = Rect2( 80, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 6 )
+region = Rect2( 160, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 6 )
+region = Rect2( 240, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 6 )
+region = Rect2( 320, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 6 )
+region = Rect2( 400, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 6 )
+region = Rect2( 480, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 560, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 6 )
+region = Rect2( 640, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 6 )
+region = Rect2( 720, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 6 )
+region = Rect2( 800, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 6 )
+region = Rect2( 880, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 6 )
+region = Rect2( 960, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 80, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 160, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 240, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 400, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 480, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 288, 80, 72 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 288, 80, 72 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 5 ) ],
+"loop": false,
+"name": "take_damage",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": false,
+"name": "die",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+} ]
+
+[sub_resource type="CircleShape2D" id=29]
+radius = 200.0
+
+[sub_resource type="CircleShape2D" id=30]
+radius = 22.0
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("GFX/Weapon:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -75.6493, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("GFX/Weapon:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("GFX/Weapon:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -8, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "smash"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("GFX/Weapon:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -75.6493, -0.25, 0, 0.25, 0, 40.4608, -0.25, 0, 0.25, 0, 96.1448, -0.25, 0, 0.25, 0, 185.028, -0.25, 0, 0.25, 0, -75.6, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("GFX/Weapon:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -3, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, -3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("GFX/Weapon:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -8, -0.25, 0, 0.25, 0, -7, -0.25, 0, 0.25, 0, -7, -0.25, 0, 0.25, 0, -8, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4 )
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_melee_hit"
+} ]
+}
+
+[node name="Traktorina" instance=ExtResource( 1 )]
+script = ExtResource( 7 )
+damage = 15.0
+hp = 60.0
+armor = 6.0
+
+[node name="BodyCollision" type="CollisionShape2D" parent="." index="0"]
+visible = false
+position = Vector2( 0, -7 )
+shape = SubResource( 31 )
+
+[node name="Label" parent="." index="1"]
+margin_left = -20.0
+margin_right = 68.0
+text = "TRAKTORINA"
+align = 1
+
+[node name="GFX" type="Node2D" parent="." index="2"]
+
+[node name="Body" type="AnimatedSprite" parent="GFX" index="0"]
+position = Vector2( 6, -12 )
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="Weapon" type="Sprite" parent="GFX" index="1"]
+position = Vector2( -3, -8 )
+rotation = -1.32033
+texture = ExtResource( 3 )
+offset = Vector2( 7.06979, -5.9563 )
+flip_h = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardArea" index="0"]
+visible = false
+position = Vector2( 0, -7 )
+shape = SubResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
+visible = false
+position = Vector2( 0, -7 )
+shape = SubResource( 30 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+anims/RESET = SubResource( 27 )
+anims/smash = SubResource( 26 )
